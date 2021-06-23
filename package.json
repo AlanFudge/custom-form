@@ -1,0 +1,44 @@
+{
+  "name": "custom-form",
+  "version": "1.0.0",
+  "description": "App used to create and use custom html forms",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlanFudge/custom-form.git"
+  },
+  "author": "Alan Fudge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlanFudge/custom-form/issues"
+  },
+  "homepage": "https://github.com/AlanFudge/custom-form#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router": "^5.2.0",
+    "redux": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
