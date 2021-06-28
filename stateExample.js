@@ -22,16 +22,19 @@ const exampleState = {
             title: "text-displayed-for-input",
             name: "input-name-no-spaces",
             type: "some-html-input-type",
-            checked: "default-undefined",
-            disabled: "default-undefined",
-            max: "default-undefined",
-            maxlength: "default-undefined",
-            min: "default-undefined",
-            pattern: "default-undefined",
-            readonly: "default-undefined",
-            required: "default-undefined",
-            step: "default-undefined",
-            placeholder: "default-undefined",
+            attributes: {
+                checked: "default-undefined",
+                disabled: "default-undefined",
+                max: "default-undefined",
+                maxlength: "default-undefined",
+                min: "default-undefined",
+                pattern: "default-undefined",
+                readonly: "default-undefined",
+                required: "default-undefined",
+                step: "default-undefined",
+                placeholder: "default-undefined",
+
+            },
             selectOptions: ["list-of-select-options-default-undefined"]
         }
     }
