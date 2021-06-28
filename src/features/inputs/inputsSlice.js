@@ -20,11 +20,13 @@ const inputsSlice = createSlice({
         },
         deleteInput(state, action) {
             delete state[action.payload.inputId];
+        },
+        addAttributes(state, action) {
+            state[action.payload.inputId].attributes = action.payload.attributes;
         }
-        //need to add reducers for adding attributes to inputs
     }
 });
 
 export const selectInputs = (state) => state.inputs;
-export const { addInput, changeInputName, changeInputTitle, changeInputType, deleteInput } = inputsSlice.actions;
+export const { addInput, changeInputName, changeInputTitle, changeInputType, deleteInput, addAttributes } = inputsSlice.actions;
 export default inputsSlice.reducer;
