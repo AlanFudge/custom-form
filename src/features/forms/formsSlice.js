@@ -26,6 +26,9 @@ const formsSlice = createSlice({
         addSectionToForm(state, action) {
             state[action.payload.formId].sections.push(action.payload.sectionId);
         },
+        deleteSectionFromForm(state, action) {
+            state[action.payload.formId].sections = state[action.payload.formId].sections.filter(i => i != action.payload.sectionId);
+        },
         changeFormName(state, action) {
             state[action.payload.formId].name = action.payload.name;
         },
@@ -39,7 +42,7 @@ const formsSlice = createSlice({
 });
 
 export const selectForms = (state) => state.forms;
-export const { addForm, addSectionToForm, changeFormName, changeFormTarget, deleteForm } = formsSlice.actions;
+export const { addForm, addSectionToForm, deleteSectionFromForm, changeFormName, changeFormTarget, deleteForm } = formsSlice.actions;
 
 export const deleteFormThunk = (payload) => {
     return (dispatch) => {
