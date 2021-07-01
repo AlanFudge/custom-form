@@ -4,6 +4,7 @@ import NewFormForm from '../../components/newFormForm';
 import { Form } from './form';
 import { selectForms, deleteFormThunk } from './formsSlice';
 import { selectSections } from './../sections/sectionsSlice';
+import { Link } from 'react-router-dom';
 
 export default function FormList() {
     const forms = useSelector(selectForms);
@@ -17,7 +18,7 @@ export default function FormList() {
         const sectionIds = forms[formId].sections;
         const inputIds = sectionIds.flatMap(id => {
             return sections[id].inputs;
-        })
+        });
 
         dispatch(deleteFormThunk({
             formId,
@@ -33,7 +34,9 @@ export default function FormList() {
                     return (
                         <div id={form.id}>
                             <h2>{form.name}</h2>
-                            <p>{form.id}</p>
+                            <Link to={'/forms/' + form.id}>
+                                <p>{form.id}</p>
+                            </Link>
                             <p>{form.externalTarget}</p>
                             <ul>
                                 {
