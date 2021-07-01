@@ -24,7 +24,7 @@ export default function NewFormForm() {
             <h1>Add New Form</h1>
             <form onSubmit={handleSubmit}>
                 <input
-                    id='topic-name'
+                    id='form-name'
                     type='text'
                     value={name}
                     onChange={(e) => setName(e.currentTarget.value)}
