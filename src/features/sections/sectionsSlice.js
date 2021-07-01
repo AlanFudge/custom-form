@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { addSectionToForm, deleteSectionFromForm } from "../forms/formsSlice";
 import { deleteInput } from "../inputs/inputsSlice";
 
 const initialState = {}
@@ -8,7 +9,10 @@ const sectionsSlice = createSlice({
     initialState,
     reducers: {
         addSection(state, action) {
-            state[action.payload.id] = action.payload
+            state[action.payload.id] = {
+                ...action.payload,
+                inputs: []
+            }
         },
         changeSectionName(state, action) {
             state[action.payload.sectionId].name = action.payload.name;
@@ -37,6 +41,14 @@ const sectionsSlice = createSlice({
 export const selectSections = (state) => state.sections;
 export const { addSection, changeSectionName, changeSectionDescription, changeSectionFormat, addInputToSection, swapInputIndexes, deleteSection } = sectionsSlice.actions;
 
+export const addSectionThunk = (payload) => {
+    return (dispatch) => {
+        dispatch(addSection(payload.section));
+
+        dispatch(addSectionToForm({ formId: payload.formId, sectionId: payload.section.id }))
+    }
+}
+
 export const deleteSectionThunk = (payload) => {
     return (dispatch) => {
         payload.inputIds.forEach(inputId => {
@@ -44,6 +56,8 @@ export const deleteSectionThunk = (payload) => {
         });
 
         dispatch(deleteSection({ sectionId: payload.sectionId }));
+
+        dispatch(deleteSectionFromForm({ sectionId: payload.sectionId, formId: payload.formId }));
     }
 }
 
