@@ -24,7 +24,7 @@ const sectionsSlice = createSlice({
             state[action.payload.sectionId].format = action.payload.format;
         },
         addInputToSection(state, action) {
-            state[action.payload.sectionId].sections.push(action.payload.inputId);
+            state[action.payload.sectionId].inputs.push(action.payload.inputId);
         },
         swapInputIndexes(state, action) {
             const input1Index = state[action.payload.sectionId].inputs.indexOf(action.payload.input1Id);
