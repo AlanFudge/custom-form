@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { addInputToSection } from "../sections/sectionsSlice";
 
 const initialState = {}
 
@@ -7,7 +8,7 @@ const inputsSlice = createSlice({
     initialState,
     reducers: {
         addInput(state, action) {
-            state[action.payload.id] = action.payload
+            state[action.payload.inputId] = action.payload
         },
         changeInputName(state, action) {
             state[action.payload.inputId].name = action.payload.name;
@@ -29,4 +30,15 @@ const inputsSlice = createSlice({
 
 export const selectInputs = (state) => state.inputs;
 export const { addInput, changeInputName, changeInputTitle, changeInputType, deleteInput, addAttributes } = inputsSlice.actions;
+
+export const addInputThunk = (payload) => {
+    const { sectionId, input } = payload;
+    const { inputId, name, type, title, attributes } = input;
+    return (dispatch) => {
+        dispatch(addInputToSection({ sectionId, inputId }));
+
+        dispatch(addInput({ inputId, name, type, title, attributes }));
+    }
+}
+
 export default inputsSlice.reducer;
