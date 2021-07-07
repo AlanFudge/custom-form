@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addInputToSection } from "../sections/sectionsSlice";
+import { addInputToSection, deleteInputFromSection } from "../sections/sectionsSlice";
 
 const initialState = {}
 
@@ -38,6 +38,18 @@ export const addInputThunk = (payload) => {
         dispatch(addInputToSection({ sectionId, inputId }));
 
         dispatch(addInput({ inputId, name, type, title, attributes }));
+    }
+}
+
+export const deleteInputThunk = (payload) => {
+    const { sectionId, inputId } = payload;
+    return (dispatch) => {
+        dispatch(deleteInputFromSection({
+            sectionId,
+            inputId
+        }));
+
+        dispatch(deleteInput({ inputId }));
     }
 }
 

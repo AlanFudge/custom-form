@@ -34,12 +34,15 @@ const sectionsSlice = createSlice({
         },
         deleteSection(state, action) {
             delete state[action.payload.sectionId];
+        },
+        deleteInputFromSection(state, action) {
+            state[action.payload.sectionId].inputs = state[action.payload.sectionId].inputs.filter(id => id != action.payload.inputId);
         }
     }
 });
 
 export const selectSections = (state) => state.sections;
-export const { addSection, changeSectionName, changeSectionDescription, changeSectionFormat, addInputToSection, swapInputIndexes, deleteSection } = sectionsSlice.actions;
+export const { addSection, changeSectionName, changeSectionDescription, changeSectionFormat, addInputToSection, swapInputIndexes, deleteSection, deleteInputFromSection } = sectionsSlice.actions;
 
 export const addSectionThunk = (payload) => {
     return (dispatch) => {

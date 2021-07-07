@@ -32,7 +32,7 @@ export default function Section({ sectionId }) {
             <div className='edit-input-list'>
                 {
                     section.inputs.map(id => {
-                        return <Input inputId={id} />
+                        return <Input inputId={id} sectionId={sectionId} />
                     })
                 }
                 <NewInputForm sectionId={sectionId} />
