@@ -32,10 +32,10 @@ export default function FormList() {
             {
                 Object.values(forms).map(form => {
                     return (
-                        <div id={form.id}>
+                        <div id={form.formId}>
                             <h2>{form.name}</h2>
-                            <Link to={'/forms/' + form.id}>
-                                <p>{form.id}</p>
+                            <Link to={'/forms/' + form.formId}>
+                                <p>{form.formId}</p>
                             </Link>
                             <p>{form.externalTarget}</p>
                             <ul>
@@ -45,7 +45,7 @@ export default function FormList() {
                                     })
                                 }
                             </ul>
-                            <button onClick={handleDelete} formId={form.id}>Delete Form</button>
+                            <button onClick={handleDelete} formId={form.formId}>Delete Form</button>
                         </div>
                     )
                 })

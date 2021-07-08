@@ -18,7 +18,7 @@ const formsSlice = createSlice({
     initialState,
     reducers: {
         addForm(state, action) {
-            state[action.payload.id] = {
+            state[action.payload.formId] = {
                 ...action.payload,
                 sections: []
             }
@@ -29,11 +29,8 @@ const formsSlice = createSlice({
         deleteSectionFromForm(state, action) {
             state[action.payload.formId].sections = state[action.payload.formId].sections.filter(i => i != action.payload.sectionId);
         },
-        changeFormName(state, action) {
-            state[action.payload.formId].name = action.payload.name;
-        },
-        changeFormTarget(state, action) {
-            state[action.payload.formId].externalTarget = action.payload.externalTarget;
+        updateForm(state, action) {
+            state[action.payload.formId] = action.payload;
         },
         deleteForm(state, action) {
             delete state[action.payload.formId];
@@ -42,7 +39,7 @@ const formsSlice = createSlice({
 });
 
 export const selectForms = (state) => state.forms;
-export const { addForm, addSectionToForm, deleteSectionFromForm, changeFormName, changeFormTarget, deleteForm } = formsSlice.actions;
+export const { addForm, addSectionToForm, deleteSectionFromForm, updateForm, deleteForm } = formsSlice.actions;
 
 export const deleteFormThunk = (payload) => {
     return (dispatch) => {

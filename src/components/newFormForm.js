@@ -13,7 +13,7 @@ export default function NewFormForm() {
         if (name.length === 0) return;
 
         dispatch(addForm({
-            id: uuidv4(),
+            formId: uuidv4(),
             name,
             externalTarget
         }));
