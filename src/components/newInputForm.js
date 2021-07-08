@@ -12,9 +12,11 @@ export default function NewInputForm({ sectionId }) {
     const [max, setMax] = useState(null);
     const [pattern, setPattern] = useState(null);
     const [maxlength, setMaxlength] = useState(null);
+    const [step, setStep] = useState(null);
+    const [placeholder, setPlaceholder] = useState(null);
     const dispatch = useDispatch();
     const [selectOptions, setSelectOptions] = useState([]);
-    
+
     const handleSelectOptionsChange = (e) => {
         e.preventDefault();
 
@@ -50,12 +52,24 @@ export default function NewInputForm({ sectionId }) {
         setMax(null);
         setPattern(null);
         setMaxlength(null);
+        setStep(null);
+        setPlaceholder(null);
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <input value={title} onChange={e => setTitle(e.currentTarget.value)} type='text' placeholder='Displayed title for input'></input>
-            <input value={name} onChange={e => setName(e.currentTarget.value)} type='text' placeholder='Name of input with no spaces. should be unique.' pattern='\S+'></input>
+            <input
+                value={title}
+                onChange={e => setTitle(e.currentTarget.value)}
+                type='text'
+                placeholder='Displayed title for input'>
+            </input>
+            <input
+                value={name}
+                onChange={e => setName(e.currentTarget.value)}
+                type='text'
+                placeholder='Name of input with no spaces. should be unique.' pattern='\S+'>
+            </input>
             <select value={type} onChange={e => setType(e.currentTarget.value)}>
                 <option value='text'>text</option>
                 <option value='number'>number</option>
@@ -74,21 +88,81 @@ export default function NewInputForm({ sectionId }) {
             </select>
             {
                 type === 'select' ?
-                    <input type='text' value={selectOptions.join(',')} onChange={handleSelectOptionsChange} placeholder='comma seperated list of select options'></input>
+                    <input
+                        type='text'
+                        value={selectOptions.join(',')}
+                        onChange={handleSelectOptionsChange}
+                        placeholder='comma seperated list of select options'>
+                    </input>
                     : null
             }
             <div class='attributes-list'>
                 <p>Leave empty for no attribute</p>
-                <label htmlFor='required'>Required?</label>
-                <input name='required' type='checkbox' checked={required} onChange={e => setRequired(!required)}></input>
-                <label htmlFor='min'>Min</label>
-                <input name='min' type='number' value={min} onChange={e => e.currentTarget.value === '' ? setMin(null) : setMin(e.currentTarget.value)}></input>
-                <label htmlFor='max'>Max</label>
-                <input name='max' type='number' value={max} onChange={e => e.currentTarget.value === '' ? setMax(null) : setMax(e.currentTarget.value)}></input>
-                <label htmlFor='pattern'>RegEx Pattern</label>
-                <input name='pattern' type='text' placeholder='/[a-z]/gi' value={pattern} onChange={e => e.currentTarget.value === '' ? setPattern(null) : setPattern(e.currentTarget.value)}></input>
-                <label htmlFor='maxlength'>Max Length</label>
-                <input name='max-length' type='number' placeholder='max length of text' value={maxlength} onChange={e => e.currentTarget.value === '' ? setMaxlength(null) : setMaxlength(e.currentTarget.value)}></input>
+                <div>
+                    <label htmlFor='required'>Required?</label>
+                    <input
+                        name='required'
+                        type='checkbox'
+                        checked={required}
+                        onChange={e => setRequired(!required)}>
+                    </input>
+                </div>
+                <div>
+                    <label htmlFor='min'>Min</label>
+                    <input
+                        name='min'
+                        type='number'
+                        value={min}
+                        onChange={e => e.currentTarget.value === '' ? setMin(null) : setMin(e.currentTarget.value)}>
+                    </input>
+                </div>
+                <div>
+                    <label htmlFor='max'>Max</label>
+                    <input
+                        name='max'
+                        type='number'
+                        value={max}
+                        onChange={e => e.currentTarget.value === '' ? setMax(null) : setMax(e.currentTarget.value)}>
+                    </input>
+                </div>
+                <div>
+                    <label htmlFor='pattern'>RegEx Pattern</label>
+                    <input
+                        name='pattern'
+                        type='text'
+                        placeholder='/[a-z]/gi'
+                        value={pattern}
+                        onChange={e => e.currentTarget.value === '' ? setPattern(null) : setPattern(e.currentTarget.value)}>
+                    </input>
+                </div>
+                <div>
+                    <label htmlFor='maxlength'>Max Length</label>
+                    <input
+                        name='max-length'
+                        type='number'
+                        placeholder='max length of text'
+                        value={maxlength}
+                        onChange={e => e.currentTarget.value === '' ? setMaxlength(null) : setMaxlength(e.currentTarget.value)}>
+                    </input>
+                </div>
+                <div>
+                    <label htmlFor='step'>Step</label>
+                    <input
+                        type='number'
+                        placeholder='Step of number input'
+                        value={step}
+                        onChange={e => e.currentTarget.value === '' ? setStep(null) : setStep(e.currentTarget.value)}>
+                    </input>
+                </div>
+                <div>
+                    <label htmlFor='placeholder'>Placeholder</label>
+                    <input
+                        type='text'
+                        placeholder='placeholder text for input'
+                        value={placeholder}
+                        onChange={e => e.currentTarget.value === '' ? setPlaceholder(null) : setPlaceholder(e.currentTarget.value)}>
+                    </input>
+                </div>
             </div>
             <input type='submit' value='Add New Input'></input>
         </form>
