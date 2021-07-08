@@ -1,34 +1,63 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addSectionThunk } from './../features/sections/sectionsSlice';
+import { addSectionThunk, updateSection } from './../features/sections/sectionsSlice';
 import { useParams } from 'react-router-dom';
 
-export default function NewSectionForm() {
-    const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
-    const [format, setFormat] = useState('single-column');
+export default function NewSectionForm({ edit = false, setEdit, section }) {
+    const [name, setName] = useState(edit ? section.name : '');
+    const [description, setDescription] = useState(edit ? section.description : '');
+    const [format, setFormat] = useState(edit ? section.format : 'single-column');
     const { formId } = useParams();
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        if (name === '') return;
+        if (!edit) {
+            e.preventDefault();
+            if (name === '') return;
 
-        dispatch(addSectionThunk({
-            formId,
-            section: {
-                id: uuidv4(),
+            dispatch(addSectionThunk({
+                formId,
+                section: {
+                    sectionId: uuidv4(),
+                    name,
+                    description,
+                    format
+                }
+            }));
+
+            setName('');
+            setDescription('');
+            setFormat('');
+        } else {
+            e.preventDefault();
+
+            dispatch(updateSection({
+                ...section,
                 name,
                 description,
                 format
-            }
-        }));
+            }));
+
+            setEdit(false);
+        }
+    }
+
+    const handleCancel = (e) => {
+        e.preventDefault();
+
+        setEdit(false);
+        setName(section.name);
+        setDescription(section.description);
+        setFormat(section.format);
     }
 
     return (
         <section>
-            <h1>Add New Section</h1>
+            {
+                edit ? null :
+                    <h1>Add New Section</h1>
+            }
             <form onSubmit={handleSubmit}>
                 <input
                     id='section-name'
@@ -48,7 +77,10 @@ export default function NewSectionForm() {
                     <option value='single-column'>Single Column</option>
                     <option value='double-column'>Two Columns</option>
                 </select>
-                <input type='submit' value='Add New Section'></input>
+                <input type='submit' value={edit ? 'Save' : 'Add New Section'}></input>
+                {
+                    edit ? <button onClick={handleCancel}>Cancel</button> : null
+                }
             </form>
         </section>
     )

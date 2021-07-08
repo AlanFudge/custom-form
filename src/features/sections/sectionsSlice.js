@@ -9,19 +9,13 @@ const sectionsSlice = createSlice({
     initialState,
     reducers: {
         addSection(state, action) {
-            state[action.payload.id] = {
+            state[action.payload.sectionId] = {
                 ...action.payload,
                 inputs: []
             }
         },
-        changeSectionName(state, action) {
-            state[action.payload.sectionId].name = action.payload.name;
-        },
-        changeSectionDescription(state, action) {
-            state[action.payload.sectionId].description = action.payload.description;
-        },
-        changeSectionFormat(state, action) {
-            state[action.payload.sectionId].format = action.payload.format;
+        updateSection(state, action) {
+            state[action.payload.sectionId] = action.payload;
         },
         addInputToSection(state, action) {
             state[action.payload.sectionId].inputs.push(action.payload.inputId);
@@ -42,13 +36,14 @@ const sectionsSlice = createSlice({
 });
 
 export const selectSections = (state) => state.sections;
-export const { addSection, changeSectionName, changeSectionDescription, changeSectionFormat, addInputToSection, swapInputIndexes, deleteSection, deleteInputFromSection } = sectionsSlice.actions;
+export const { addSection, updateSection, addInputToSection, swapInputIndexes, deleteSection, deleteInputFromSection } = sectionsSlice.actions;
 
 export const addSectionThunk = (payload) => {
+    const { formId, section } = payload
     return (dispatch) => {
-        dispatch(addSection(payload.section));
+        dispatch(addSection(section));
 
-        dispatch(addSectionToForm({ formId: payload.formId, sectionId: payload.section.id }))
+        dispatch(addSectionToForm({ formId, sectionId: section.sectionId }))
     }
 }
 
