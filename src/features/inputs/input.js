@@ -16,9 +16,19 @@ export default function Input({ inputId, sectionId }) {
     }
 
     return (
-        <>
-            <p>{input.inputId}</p>
+        <div>
+            <h3>{input.inputId}</h3>
+            <h4>{input.name}</h4>
+            <h5>{input.title}</h5>
+            <p>{input.type}</p>
+            <ul>
+                {
+                    Object.keys(input.attributes).map(key => {
+                        return <li>{`${key}: ${input.attributes[key]}`}</li>
+                    })
+                }
+            </ul>
             <button onClick={deleteInputHandler}>Delete Input</button>
-        </>
+        </div>
     )
 }
