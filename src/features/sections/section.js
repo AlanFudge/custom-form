@@ -39,6 +39,7 @@ export default function Section({ sectionId }) {
                         <button onClick={e => setEdit(true)}>Edit</button>
                     </>
             }
+            <button className='delete' onClick={handleDelete}>Delete Section</button>
             <div className='edit-input-list'>
                 {
                     section.inputs.map(id => {
@@ -47,7 +48,6 @@ export default function Section({ sectionId }) {
                 }
                 <NewInputForm sectionId={sectionId} />
             </div>
-            <button className='delete' onClick={handleDelete}>Delete Section</button>
         </div>
     )
 }
