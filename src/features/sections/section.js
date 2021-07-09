@@ -13,6 +13,7 @@ export default function Section({ sectionId }) {
     const dispatch = useDispatch();
     const { formId } = useParams();
     const [edit, setEdit] = useState();
+    const [addInput, setAddInput] = useState(false);
 
     const handleDelete = (e) => {
         e.preventDefault();
@@ -46,7 +47,15 @@ export default function Section({ sectionId }) {
                         return <Input inputId={id} sectionId={sectionId} />
                     })
                 }
-                <NewInputForm sectionId={sectionId} />
+                {
+                    addInput ?
+                        <>
+                            <NewInputForm sectionId={sectionId} />
+                            <button onClick={e => setAddInput(false)}>Collapse Add Input Form</button>
+                        </>
+                        :
+                        <button onClick={e => setAddInput(true)}>Add Input</button>                    
+                }
             </div>
         </div>
     )
