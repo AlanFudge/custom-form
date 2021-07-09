@@ -18,6 +18,9 @@ export default function NewFormForm({ edit = false, setEdit, form }) {
                 name,
                 externalTarget
             }));
+
+            setName('');
+            setExternalTarget('');
         } else {
             e.preventDefault();
 
