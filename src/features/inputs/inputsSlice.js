@@ -10,14 +10,8 @@ const inputsSlice = createSlice({
         addInput(state, action) {
             state[action.payload.inputId] = action.payload
         },
-        changeInputName(state, action) {
-            state[action.payload.inputId].name = action.payload.name;
-        },
-        changeInputTitle(state, action) {
-            state[action.payload.inputId].title = action.payload.title;
-        },
-        changeInputType(state, action) {
-            state[action.payload.inputId].type = action.payload.type;
+        updateInput(state, action) {
+            state[action.payload.inputId] = action.payload;
         },
         deleteInput(state, action) {
             delete state[action.payload.inputId];
@@ -29,7 +23,7 @@ const inputsSlice = createSlice({
 });
 
 export const selectInputs = (state) => state.inputs;
-export const { addInput, changeInputName, changeInputTitle, changeInputType, deleteInput, addAttributes } = inputsSlice.actions;
+export const { addInput, updateInput, deleteInput, addAttributes } = inputsSlice.actions;
 
 export const addInputThunk = (payload) => {
     const { sectionId, input } = payload;

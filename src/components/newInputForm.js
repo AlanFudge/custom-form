@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addInputThunk } from '../features/inputs/inputsSlice';
+import { addInputThunk, updateInput } from '../features/inputs/inputsSlice';
 import { v4 as uuidv4 } from 'uuid';
 
-export default function NewInputForm({ sectionId }) {
-    const [title, setTitle] = useState('');
-    const [name, setName] = useState('');
-    const [type, setType] = useState('text');
-    const [required, setRequired] = useState(false)
-    const [min, setMin] = useState(null);
-    const [max, setMax] = useState(null);
-    const [pattern, setPattern] = useState(null);
-    const [maxlength, setMaxlength] = useState(null);
-    const [step, setStep] = useState(null);
-    const [placeholder, setPlaceholder] = useState(null);
+export default function NewInputForm({ sectionId, edit = false, setEdit, input }) {
+    const [title, setTitle] = useState(edit ? input.title : '');
+    const [name, setName] = useState(edit ? input.name : '');
+    const [type, setType] = useState(edit ? input.type : 'text');
+    const [required, setRequired] = useState(edit ? input.attributes.required : false)
+    const [min, setMin] = useState(edit ? input.attributes.min : null);
+    const [max, setMax] = useState(edit ? input.attributes.max : null);
+    const [pattern, setPattern] = useState(edit ? input.attributes.pattern : null);
+    const [maxlength, setMaxlength] = useState(edit ? input.attributes.maxlength : null);
+    const [step, setStep] = useState(edit ? input.attributes.step : null);
+    const [placeholder, setPlaceholder] = useState(edit ? input.attributes.placeholder : null);
+    const [selectOptions, setSelectOptions] = useState(edit ? input.selectOptions : []);
     const dispatch = useDispatch();
-    const [selectOptions, setSelectOptions] = useState([]);
 
     const handleSelectOptionsChange = (e) => {
         e.preventDefault();
@@ -26,10 +26,41 @@ export default function NewInputForm({ sectionId }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        dispatch(addInputThunk({
-            sectionId,
-            input: {
-                inputId: uuidv4(),
+        if (!edit) {
+            dispatch(addInputThunk({
+                sectionId,
+                input: {
+                    inputId: uuidv4(),
+                    name,
+                    title,
+                    type,
+                    attributes: {
+                        min,
+                        max,
+                        pattern,
+                        maxlength,
+                        required,
+                        placeholder,
+                        step
+                    },
+                    selectOptions
+                }
+            }))
+
+            setTitle('');
+            setName('');
+            setType('text');
+            setRequired(false);
+            setMin(null);
+            setMax(null);
+            setPattern(null);
+            setMaxlength(null);
+            setStep(null);
+            setPlaceholder(null);
+            setSelectOptions([]);
+        } else {
+            dispatch(updateInput({
+                ...input,
                 name,
                 title,
                 type,
@@ -38,22 +69,33 @@ export default function NewInputForm({ sectionId }) {
                     max,
                     pattern,
                     maxlength,
-                    required
+                    required,
+                    placeholder,
+                    step
                 },
                 selectOptions
-            }
-        }))
+            }));
 
-        setTitle('');
-        setName('');
-        setType('text');
-        setRequired(false);
-        setMin(null);
-        setMax(null);
-        setPattern(null);
-        setMaxlength(null);
-        setStep(null);
-        setPlaceholder(null);
+            setEdit(false);
+        }
+    }
+
+    const handleCancel = (e) => {
+        e.preventDefault();
+
+        setEdit(false);
+
+        setTitle(input.title);
+        setName(input.name);
+        setType(input.type);
+        setRequired(input.attributes.required);
+        setMin(input.attributes.min);
+        setMax(input.attributes.max);
+        setPattern(input.attributes.pattern);
+        setMaxlength(input.attributes.maxlength);
+        setStep(input.attributes.step);
+        setPlaceholder(input.attributes.placeholder);
+        setSelectOptions(input.selectOptions);
     }
 
     return (
@@ -85,6 +127,7 @@ export default function NewInputForm({ sectionId }) {
                 <option value='url'>url</option>
                 <option value='week'>week</option>
                 <option value='select'>select</option>
+                <option value='radio'>radio (multiple choice)</option>
             </select>
             {
                 type === 'select' ?
@@ -92,7 +135,7 @@ export default function NewInputForm({ sectionId }) {
                         type='text'
                         value={selectOptions.join(',')}
                         onChange={handleSelectOptionsChange}
-                        placeholder='comma seperated list of select options'>
+                        placeholder='comma seperated list of select options or multiple choice options'>
                     </input>
                     : null
             }
@@ -164,7 +207,10 @@ export default function NewInputForm({ sectionId }) {
                     </input>
                 </div>
             </div>
-            <input type='submit' value='Add New Input'></input>
+            <input type='submit' value={edit ? 'Save' : 'Add New Input'}></input>
+            {
+                edit ? <button onClick={handleCancel}>Cancel</button> : null
+            }
         </form>
     )
 }
