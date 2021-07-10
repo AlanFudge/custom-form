@@ -34,5 +34,14 @@ const exampleState = {
             },
             selectOptions: ["list-of-select-options-default-undefined"]
         }
+    },
+    responses: {
+        'some-uuidv4-id': {
+            formId: 'some-uuidv4-id',
+            responseId: 'some-uuidv4-id',
+            body: {
+                //different for every form type but this should be the response body
+            }
+        }
     }
 }
