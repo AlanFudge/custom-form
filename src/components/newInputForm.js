@@ -104,13 +104,15 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                 value={title}
                 onChange={e => setTitle(e.currentTarget.value)}
                 type='text'
-                placeholder='Displayed title for input'>
+                placeholder='Displayed title for input'
+                required>
             </input>
             <input
                 value={name}
                 onChange={e => setName(e.currentTarget.value)}
                 type='text'
-                placeholder='Name of input with no spaces. should be unique.' pattern='\S+'>
+                placeholder='Name of input with no spaces. should be unique.' pattern='\S+'
+                required>
             </input>
             <select value={type} onChange={e => setType(e.currentTarget.value)}>
                 <option value='text'>text</option>
