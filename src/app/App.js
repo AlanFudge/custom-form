@@ -1,7 +1,7 @@
 import React from 'react';
 import FormList from '../features/forms/formList';
 import Form from '../features/forms/form';
-import NewSectionForm from '../components/newSectionForm';
+import DisplayForm from '../components/displayForm';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 export default function App() {
@@ -15,6 +15,9 @@ export default function App() {
                 <Route path='/forms'>
                     <h1>Here is the list of forms</h1>
                     <FormList />
+                </Route>
+                <Route path='/:formId'>
+                    <DisplayForm />
                 </Route>
                 <Route path='/'>
                     <Redirect to='/forms' />
