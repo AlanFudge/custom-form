@@ -197,6 +197,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                         type='number'
                         placeholder='Step of number input'
                         value={step}
+                        step='0.0001'
                         onChange={e => e.currentTarget.value === '' ? setStep(null) : setStep(e.currentTarget.value)}>
                     </input>
                 </div>
