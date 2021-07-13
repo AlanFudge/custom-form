@@ -5,12 +5,15 @@ import { deleteSection } from "../sections/sectionsSlice";
 //If DB is implemented use asyncThunk to add to DB
 
 const initialState = {
-    // 'some-uuidv4-id': {
-    //     id: "some-uuidv4-id",
-    //     name: "form-name",
-    //     sections: ["array-of-section-ids"],
-    //     externalTarget: "external-target-default-undefined"
-    // }
+    '71f7163b-924e-40f2-9ab1-a96b2ad7f858': {
+        formId: '71f7163b-924e-40f2-9ab1-a96b2ad7f858',
+        name: 'EOC/Submission',
+        externalTarget: 'https://someurl.com/',
+        sections: [
+            'df26778a-691c-49ec-8050-57198bf8f654',
+            '5cd8257b-71f7-4a32-9c99-8fb682c8e128'
+        ]
+    }
 }
 
 const formsSlice = createSlice({

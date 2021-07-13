@@ -2,7 +2,30 @@ import { createSlice } from "@reduxjs/toolkit";
 import { addSectionToForm, deleteSectionFromForm } from "../forms/formsSlice";
 import { deleteInput } from "../inputs/inputsSlice";
 
-const initialState = {}
+const initialState = {
+    'df26778a-691c-49ec-8050-57198bf8f654': {
+        sectionId: 'df26778a-691c-49ec-8050-57198bf8f654',
+        name: 'Prerequisites',
+        description: '',
+        format: 'single-column',
+        inputs: [
+            '5d3c0b0d-7f57-406a-99c8-59faeed35c80',
+            '6f8213bd-79cf-496e-9146-76b1749cc238'
+        ]
+    },
+    '5cd8257b-71f7-4a32-9c99-8fb682c8e128': {
+        sectionId: '5cd8257b-71f7-4a32-9c99-8fb682c8e128',
+        name: 'Minimums',
+        description: '',
+        format: 'double-column',
+        inputs: [
+            '5d2c2dfc-e57a-4431-a962-31c025b748d7',
+            '74e90405-12ec-4aca-b06f-ccb6545317a6',
+            '12b7b138-9f4d-4efe-b33b-1bab0f024b0f',
+            '38e33044-5f1b-493c-a0bc-6921406c8b50'
+        ]
+    }
+}
 
 const sectionsSlice = createSlice({
     name: 'sections',
