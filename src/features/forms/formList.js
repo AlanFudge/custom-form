@@ -37,6 +37,12 @@ export default function FormList() {
                             <Link to={'/forms/' + form.formId}>
                                 <p>{form.formId}</p>
                             </Link>
+                            <Link to={`/${form.formId}`}>
+                                <p>Submit a Response</p>
+                            </Link>
+                            <Link to ={`/forms/${form.formId}/responses`}>
+                                <p>View Responses</p>
+                            </Link>
                             <p>{form.externalTarget}</p>
                             <ul>
                                 {

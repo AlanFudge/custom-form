@@ -8,6 +8,8 @@ export default function Response({ responseId }) {
     const response = responses[responseId];
     const responseBody = response.body;
 
+    console.log(responseBody);
+
     const handleDelete = (e) => {
         e.preventDefault();
 
