@@ -11,7 +11,7 @@ const initialState = {
             min: null,
             max: null,
             pattern: null,
-            maxlength: null,
+            maxLength: null,
             required: true,
             placeholder: null,
             step: null
@@ -26,7 +26,7 @@ const initialState = {
             min: null,
             max: null,
             pattern: null,
-            maxlength: null,
+            maxLength: null,
             required: true,
             placeholder: null,
             step: null
@@ -41,7 +41,7 @@ const initialState = {
             min: '30',
             max: null,
             pattern: null,
-            maxlength: null,
+            maxLength: null,
             required: true,
             placeholder: null,
             step: '0.1'
@@ -56,7 +56,7 @@ const initialState = {
             min: '5',
             max: null,
             pattern: null,
-            maxlength: null,
+            maxLength: null,
             required: true,
             placeholder: null,
             step: '0.1'
@@ -71,7 +71,7 @@ const initialState = {
             min: '3',
             max: null,
             pattern: null,
-            maxlength: null,
+            maxLength: null,
             required: true,
             placeholder: null,
             step: '0.1'
@@ -86,7 +86,7 @@ const initialState = {
             min: '10',
             max: null,
             pattern: null,
-            maxlength: null,
+            maxLength: null,
             required: true,
             placeholder: null,
             step: '1'

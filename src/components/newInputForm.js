@@ -11,7 +11,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
     const [min, setMin] = useState(edit ? input.attributes.min : null);
     const [max, setMax] = useState(edit ? input.attributes.max : null);
     const [pattern, setPattern] = useState(edit ? input.attributes.pattern : null);
-    const [maxlength, setMaxlength] = useState(edit ? input.attributes.maxlength : null);
+    const [maxLength, setMaxLength] = useState(edit ? input.attributes.maxLength : null);
     const [step, setStep] = useState(edit ? input.attributes.step : null);
     const [placeholder, setPlaceholder] = useState(edit ? input.attributes.placeholder : null);
     const [selectOptions, setSelectOptions] = useState(edit ? input.selectOptions : []);
@@ -38,7 +38,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                         min,
                         max,
                         pattern,
-                        maxlength,
+                        maxLength,
                         required,
                         placeholder,
                         step
@@ -54,7 +54,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
             setMin(null);
             setMax(null);
             setPattern(null);
-            setMaxlength(null);
+            setMaxLength(null);
             setStep(null);
             setPlaceholder(null);
             setSelectOptions([]);
@@ -68,7 +68,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                     min,
                     max,
                     pattern,
-                    maxlength,
+                    maxLength,
                     required,
                     placeholder,
                     step
@@ -92,7 +92,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
         setMin(input.attributes.min);
         setMax(input.attributes.max);
         setPattern(input.attributes.pattern);
-        setMaxlength(input.attributes.maxlength);
+        setMaxLength(input.attributes.maxLength);
         setStep(input.attributes.step);
         setPlaceholder(input.attributes.placeholder);
         setSelectOptions(input.selectOptions);
@@ -182,13 +182,13 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                     </input>
                 </div>
                 <div>
-                    <label htmlFor='maxlength'>Max Length</label>
+                    <label htmlFor='maxLength'>Max Length</label>
                     <input
                         name='max-length'
                         type='number'
                         placeholder='max length of text'
-                        value={maxlength}
-                        onChange={e => e.currentTarget.value === '' ? setMaxlength(null) : setMaxlength(e.currentTarget.value)}>
+                        value={maxLength}
+                        onChange={e => e.currentTarget.value === '' ? setMaxLength(null) : setMaxLength(e.currentTarget.value)}>
                     </input>
                 </div>
                 <div>
