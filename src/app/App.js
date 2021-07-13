@@ -3,11 +3,16 @@ import FormList from '../features/forms/formList';
 import Form from '../features/forms/form';
 import DisplayForm from '../components/displayForm';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import ResponseSucess from '../components/responseSuccess';
+import ResponseList from '../features/responses/responseList';
 
 export default function App() {
     return (
         <Router>
             <Switch>
+                <Route path='/forms/:formId/responses'>
+                    <ResponseList />
+                </Route>
                 <Route path='/forms/:formId'>
                     <h1>Here is the form</h1>
                     <Form />
@@ -15,6 +20,9 @@ export default function App() {
                 <Route path='/forms'>
                     <h1>Here is the list of forms</h1>
                     <FormList />
+                </Route>
+                <Route path='/form-success'>
+                    <ResponseSucess />
                 </Route>
                 <Route path='/:formId'>
                     <DisplayForm />
