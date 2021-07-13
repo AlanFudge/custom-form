@@ -117,6 +117,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
             <select value={type} onChange={e => setType(e.currentTarget.value)}>
                 <option value='text'>text</option>
                 <option value='number'>number</option>
+                <option value='checkbox'>checkbox</option>
                 <option value='color'>color</option>
                 <option value='date'>date</option>
                 <option value='datetime-local'>datetime-local</option>
