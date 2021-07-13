@@ -9,8 +9,9 @@ export default function NewFormForm({ edit = false, setEdit, form }) {
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
+        e.preventDefault();
+
         if (!edit) {
-            e.preventDefault();
             if (name.length === 0) return;
 
             dispatch(addForm({
@@ -22,8 +23,6 @@ export default function NewFormForm({ edit = false, setEdit, form }) {
             setName('');
             setExternalTarget('');
         } else {
-            e.preventDefault();
-
             dispatch(updateForm({
                 ...form,
                 name,
@@ -47,6 +46,7 @@ export default function NewFormForm({ edit = false, setEdit, form }) {
             {edit ? null : <h1>Add New Form</h1>}
             <form onSubmit={handleSubmit}>
                 <input
+                    name='form-name'
                     id='form-name'
                     type='text'
                     value={name}
@@ -54,13 +54,14 @@ export default function NewFormForm({ edit = false, setEdit, form }) {
                     placeholder='Form Name'
                 />
                 <input
+                    name='external-target'
                     id='external-target'
                     type='url'
                     value={externalTarget}
                     onChange={(e) => setExternalTarget(e.currentTarget.value)}
                     placeholder='https://www.someurl.com'
                 />
-                <input type='submit' value={edit ? 'Save' : 'Add New Form'}></input>
+                <input name='submit' type='submit' value={edit ? 'Save' : 'Add New Form'}></input>
                 {edit ? <button value='Cancel' onClick={handleCancel}>Cancel</button> : null}
             </form>
         </section>
