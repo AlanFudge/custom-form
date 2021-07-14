@@ -20,10 +20,10 @@ export default function NavBar() {
     return (
         <nav>
             <div onClick={handleBack} className='go-back'>
-                <p>{`<`}</p>
+                <p>{`< BACK`}</p>
             </div>
             <div onClick={handleForward} className='go-forward'>
-                <p>{`>`}</p>
+                <p>{`FORWARD >`}</p>
             </div>
             <NavLink to='/'>Home</NavLink>
             <NavLink to='/forms'>Edit/View Forms</NavLink>
