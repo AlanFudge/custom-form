@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addForm, updateForm } from '../features/forms/formsSlice';
+import { addForm, updateForm } from './formsSlice';
 
 export default function NewFormForm({ edit = false, setEdit, form }) {
     const [name, setName] = useState(edit ? form.name : '');

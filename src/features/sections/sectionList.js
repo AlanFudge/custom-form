@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { selectForms } from '../forms/formsSlice';
-import NewSectionForm from '../../components/newSectionForm';
+import NewSectionForm from './newSectionForm';
 import Section from './section';
 
 export default function SectionList() {

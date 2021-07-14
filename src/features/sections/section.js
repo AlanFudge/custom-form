@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteSectionThunk, selectSections } from './sectionsSlice';
 import { useParams } from 'react-router';
-import NewInputForm from '../../components/newInputForm';
+import NewInputForm from '../inputs/newInputForm';
 import Input from '../inputs/input';
-import NewSectionForm from '../../components/newSectionForm';
+import NewSectionForm from './newSectionForm';
 
 
 export default function Section({ sectionId }) {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import NewFormForm from '../../components/newFormForm';
-import { Form } from './form';
+import NewFormForm from './newFormForm';
 import { selectForms, deleteFormThunk } from './formsSlice';
 import { selectSections } from './../sections/sectionsSlice';
 import { Link } from 'react-router-dom';

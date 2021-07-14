@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectForms } from '../features/forms/formsSlice';
+import { selectForms } from './formsSlice';
 import { useHistory, useParams } from 'react-router-dom';
-import { addResponse } from '../features/responses/responsesSlice';
-import DisplaySection from './displaySection';
+import { addResponse } from '../responses/responsesSlice';
+import DisplaySection from '../sections/displaySection';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function DisplayForm() {

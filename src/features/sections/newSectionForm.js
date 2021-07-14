@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addSectionThunk, updateSection } from './../features/sections/sectionsSlice';
+import { addSectionThunk, updateSection } from './sectionsSlice';
 import { useParams } from 'react-router-dom';
 
 export default function NewSectionForm({ edit = false, setEdit, section }) {

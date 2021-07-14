@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addInputThunk, updateInput } from '../features/inputs/inputsSlice';
+import { addInputThunk, updateInput } from './inputsSlice';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function NewInputForm({ sectionId, edit = false, setEdit, input }) {

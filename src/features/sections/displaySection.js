@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectSections } from '../features/sections/sectionsSlice';
-import DisplayInput from './displayInput';
+import { selectSections } from './sectionsSlice';
+import DisplayInput from '../inputs/displayInput';
 
 export default function DisplaySection({ sectionId }) {
     const sections = useSelector(selectSections);

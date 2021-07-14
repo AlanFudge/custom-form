@@ -1,7 +1,7 @@
 import React from 'react';
 import FormList from '../features/forms/formList';
 import Form from '../features/forms/form';
-import DisplayForm from '../components/displayForm';
+import DisplayForm from '../features/forms/displayForm';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import ResponseSucess from '../components/responseSuccess';
 import ResponseList from '../features/responses/responseList';

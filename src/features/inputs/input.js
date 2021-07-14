@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import NewInputForm from '../../components/newInputForm';
+import NewInputForm from './newInputForm';
 import { selectSections, swapInputIndexes } from '../sections/sectionsSlice';
 import { deleteInputThunk, selectInputs } from './inputsSlice';
 

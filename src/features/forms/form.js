@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectForms } from './formsSlice';
 import { useParams } from 'react-router-dom';
 import SectionList from '../sections/sectionList';
-import NewFormForm from './../../components/newFormForm';
+import NewFormForm from './newFormForm';
 
 export default function Form() {
     const forms = useSelector(selectForms);

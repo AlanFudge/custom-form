@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectInputs } from '../features/inputs/inputsSlice';
+import { selectInputs } from './inputsSlice';
 
 export default function DisplayInput({ inputId }) {
     const inputs = useSelector(selectInputs);
