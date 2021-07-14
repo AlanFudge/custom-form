@@ -118,11 +118,11 @@ export const { addInput, updateInput, deleteInput, addAttributes } = inputsSlice
 
 export const addInputThunk = (payload) => {
     const { sectionId, input } = payload;
-    const { inputId, name, type, title, attributes } = input;
+    const { inputId, name, type, title, attributes, selectOptions } = input;
     return (dispatch) => {
         dispatch(addInputToSection({ sectionId, inputId }));
 
-        dispatch(addInput({ inputId, name, type, title, attributes }));
+        dispatch(addInput({ inputId, name, type, title, attributes, selectOptions }));
     }
 }
 
