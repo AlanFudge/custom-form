@@ -122,8 +122,6 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                 <option value='date'>date</option>
                 <option value='datetime-local'>datetime-local</option>
                 <option value='email'>email</option>
-                <option value='file'>file</option>
-                <option value='image'>image</option>
                 <option value='month'>month</option>
                 <option value='tel'>telephone</option>
                 <option value='time'>time</option>
@@ -133,7 +131,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                 <option value='radio'>radio (multiple choice)</option>
             </select>
             {
-                type === 'select' ?
+                type === 'select' || type === 'radio' ?
                     <input
                         type='text'
                         value={selectOptions.join(',')}
@@ -142,7 +140,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                     </input>
                     : null
             }
-            <div class='attributes-list'>
+            <div className='attributes-list'>
                 <p>Leave empty for no attribute</p>
                 <div>
                     <label htmlFor='required'>Required?</label>
