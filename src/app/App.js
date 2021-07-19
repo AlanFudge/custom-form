@@ -7,6 +7,8 @@ import ResponseSucess from '../components/responseSuccess';
 import ResponseList from '../features/responses/responseList';
 import NavBar from '../components/NavBar';
 
+import '../sass/main.scss';
+
 export default function App() {
     return (
         <Router>
