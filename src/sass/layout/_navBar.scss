@@ -1,0 +1,43 @@
+.navbar {
+    @extend %no-padding-margin;
+    @extend %reset-position;
+    display: grid;
+    grid-template-columns: repeat(2, $nav-height) repeat(10, 1fr);
+    background-color: $trim-color;
+    width: 100%;
+    position: fixed;
+    height: $nav-height;
+
+    .go-back {
+        @extend %flex-center-center;
+        grid-column: 1 / span 1;
+        height: $nav-height;
+        justify-content: space-evenly;
+        img {
+            height: 50%;
+            border-radius: 50%;
+            user-select: none;
+        }
+    }
+
+    .go-forward {
+        @extend .go-back;
+        grid-column: 2 / span 1;
+    }
+
+    a {
+        @extend %flex-center-center;
+        height: 100%;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    *:hover {
+        background-color: darken($color: $trim-color, $amount: 5%);
+    }
+
+    .active-link {
+        color: $base-color;
+        text-decoration: underline;
+    }
+}

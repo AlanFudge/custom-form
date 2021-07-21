@@ -1,7 +1,16 @@
-@import 'helpers/colors';
-
+@import "helpers/colors";
+@import 'helpers/variables';
+@import 'helpers/placeholders';
+@import 'layout/navBar';
 
 body {
+    @extend %no-padding-margin;
     background-color: $base-color;
     color: $text-color;
+    font-family: monospace;
+    margin-top: $nav-height;
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
