@@ -52,8 +52,11 @@ export default function DisplayForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h1>{form.name}</h1>
+        <form className='display-form' onSubmit={handleSubmit}>
+            <div className='display-form-header'>
+                <h1>{form.name}</h1>
+                <p>* Required</p>
+            </div>
             {
                 form.sections.map(sectionId => <DisplaySection sectionId={sectionId} />)
             }
