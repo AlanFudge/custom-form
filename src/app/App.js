@@ -18,11 +18,9 @@ export default function App() {
                     <ResponseList />
                 </Route>
                 <Route path='/forms/:formId'>
-                    <h1>Here is the form</h1>
                     <Form />
                 </Route>
                 <Route path='/forms'>
-                    <h1>Here is the list of forms</h1>
                     <FormList />
                 </Route>
                 <Route path='/form-success'>
