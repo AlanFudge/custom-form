@@ -42,8 +42,8 @@ export default function NewFormForm({ edit = false, setEdit, form }) {
     }
 
     return (
-        <section>
-            {edit ? null : <h1>Add New Form</h1>}
+        <section className='new-edit-form'>
+            {edit ? <h1>Edit Form</h1> : <h1>Add New Form</h1>}
             <form onSubmit={handleSubmit}>
                 <input
                     name='form-name'
