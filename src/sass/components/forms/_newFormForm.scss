@@ -1,0 +1,23 @@
+.new-edit-form {
+    @include card(h1, form);
+    margin: 20px;
+    min-width: 300px;
+    justify-self: stretch;
+
+    * {
+        display: block;
+        margin: 18px 0;
+    }
+
+    input {
+        font-size: 20px;
+
+        &[type=submit] {
+            @include button($light-text-color, $go-color);
+        }
+    }
+
+    button {
+        @include button($light-text-color, $danger-color);
+    }
+}
