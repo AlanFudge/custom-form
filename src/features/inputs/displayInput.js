@@ -14,7 +14,7 @@ export default function DisplayInput({ inputId }) {
     if (type === 'select') {
         return (
             <div id={inputId}>
-                <label htmlFor={name}>{title}</label>
+                <label htmlFor={name}>{title} {inputAttributes.required ? <span className='required-ast'>*</span> : null}</label>
                 <select {...inputAttributes}>
                     {
                         selectOptions.map(value => {
@@ -34,7 +34,7 @@ export default function DisplayInput({ inputId }) {
                         return (
                             <>
                                 <input {...inputAttributes} value={value}></input>
-                                <label htmlFor={value}>{value}</label>
+                                <label htmlFor={value}>{value} {inputAttributes.required ? <span className='required-ast'>*</span> : null}</label>
                                 <br />
                             </>
                         )
@@ -46,7 +46,7 @@ export default function DisplayInput({ inputId }) {
 
     return (
         <div id={inputId}>
-            <label htmlFor={name}>{title}</label>
+            <label htmlFor={name}>{title} {inputAttributes.required ? <span className='required-ast'>*</span> : null}</label>
             <input {...inputAttributes}></input>
         </div>
     )
