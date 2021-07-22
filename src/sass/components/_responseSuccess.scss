@@ -1,0 +1,7 @@
+.response-success {
+    grid-column: 5 / span 4;
+    margin: 50px 0;
+    height: max-content;
+
+    @include card(h2, p);
+}

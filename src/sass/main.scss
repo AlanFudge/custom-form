@@ -1,16 +1,23 @@
 @import "helpers/colors";
 @import 'helpers/variables';
 @import 'helpers/placeholders';
+@import 'helpers/mixins';
+@import 'layout/grid';
 @import 'layout/navBar';
+@import 'components/responseSuccess';
 
 body {
     @extend %no-padding-margin;
     background-color: $base-color;
     color: $text-color;
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: $nav-height;
     a {
         text-decoration: none;
         color: inherit;
+    }
+    
+    #root {
+        @extend %twelve-column-grid;
     }
 }
