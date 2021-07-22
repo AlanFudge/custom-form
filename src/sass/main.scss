@@ -5,6 +5,10 @@
 @import 'layout/grid';
 @import 'components/navBar';
 @import 'components/responseSuccess';
+@import 'components/forms/formList';
+@import 'components/forms/newFormForm';
+// @import 'components/forms/form';
+// @import 'components/forms//displayForm';
 
 body {
     @extend %no-padding-margin;

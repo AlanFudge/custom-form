@@ -4,6 +4,7 @@
     border-radius: 10px;
     box-shadow: 3px 3px 5px $shadow-mid;
     overflow-y: hidden;
+    align-self: stretch;
 
     #{$header} {
         background-color: $trim-color;
@@ -18,4 +19,15 @@
         font-size: 18px;
         margin: 10px;
     }
+}
+
+@mixin button($color, $button-color) {
+    background-color: $button-color;
+    color: $color;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 }
