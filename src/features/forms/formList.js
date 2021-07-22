@@ -31,26 +31,21 @@ export default function FormList() {
             {
                 Object.values(forms).map(form => {
                     return (
-                        <div id={form.formId}>
+                        <div className='form-info' id={form.formId}>
                             <h2>{form.name}</h2>
-                            <Link to={'/forms/' + form.formId}>
-                                <p>{form.formId}</p>
-                            </Link>
-                            <Link to={`/${form.formId}`}>
-                                <p>Submit a Response</p>
-                            </Link>
-                            <Link to ={`/forms/${form.formId}/responses`}>
-                                <p>View Responses</p>
-                            </Link>
-                            <p>{form.externalTarget}</p>
-                            <ul>
-                                {
-                                    form.sections.map(input => {
-                                        return <li>{input}</li>
-                                    })
-                                }
-                            </ul>
-                            <button onClick={handleDelete} formId={form.formId}>Delete Form</button>
+                            <div>
+                                <Link to={'/forms/' + form.formId}>
+                                    <p>Edit Form</p>
+                                </Link>
+                                <Link to={`/${form.formId}`}>
+                                    <p>Submit a Response</p>
+                                </Link>
+                                <Link to={`/forms/${form.formId}/responses`}>
+                                    <p>View Responses</p>
+                                </Link>
+                                <p className='external-target-info'>{`External Target: ${form.externalTarget ? form.externalTarget : 'None'}`}</p>
+                                <button onClick={handleDelete} formId={form.formId}>Delete Form</button>
+                            </div>
                         </div>
                     )
                 })
