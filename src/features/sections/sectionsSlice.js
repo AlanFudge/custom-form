@@ -6,7 +6,7 @@ const initialState = {
     'df26778a-691c-49ec-8050-57198bf8f654': {
         sectionId: 'df26778a-691c-49ec-8050-57198bf8f654',
         name: 'Prerequisites',
-        description: '',
+        description: 'All items must be completed before form submission.',
         format: 'single-column',
         inputs: [
             '5d3c0b0d-7f57-406a-99c8-59faeed35c80',
@@ -16,7 +16,7 @@ const initialState = {
     '5cd8257b-71f7-4a32-9c99-8fb682c8e128': {
         sectionId: '5cd8257b-71f7-4a32-9c99-8fb682c8e128',
         name: 'Minimums',
-        description: '',
+        description: 'All minimums must be met before form submission. Any and all submissions not meeting minimums will be charged no show fees when cancelled.',
         format: 'double-column',
         inputs: [
             '5d2c2dfc-e57a-4431-a962-31c025b748d7',
