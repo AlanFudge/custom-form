@@ -1,0 +1,23 @@
+.display-section {
+    @include card(h1, ".display-section-content");
+    margin: 20px 0;
+
+    p {
+        font-size: 15px;
+        margin: 20px 0;
+    }
+
+    .two-column {
+        @extend %two-column-grid;
+
+        p {
+            grid-column: 1 / span 2;
+        }
+        .column-one {
+            grid-column: 1 / span 1;
+        }
+        .column-two {
+            grid-column: 2 / span 1;
+        }
+    }
+}

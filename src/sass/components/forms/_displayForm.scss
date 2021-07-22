@@ -1,0 +1,18 @@
+.display-form {
+    grid-column: 4 / span 6;
+
+    .display-form-header {
+        @include card(h1, p);
+        margin: 20px 0;
+        
+        p {
+            color: $danger-color;
+        }
+    }
+
+    input[type=submit] {
+        @include button($light-text-color, $go-color);
+        margin: 20px 0;
+        font-size: 20px;
+    }
+}

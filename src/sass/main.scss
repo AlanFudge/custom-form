@@ -8,7 +8,8 @@
 @import 'components/forms/formList';
 @import 'components/forms/newFormForm';
 // @import 'components/forms/form';
-// @import 'components/forms//displayForm';
+@import 'components/forms//displayForm';
+@import 'components/sections/displaySection';
 
 body {
     @extend %no-padding-margin;

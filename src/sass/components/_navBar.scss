@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: repeat(2, $nav-height) repeat(10, 1fr);
     background-color: $trim-color;
+    border-bottom: $card-edge;
     width: 100%;
     position: fixed;
     height: $nav-height;
