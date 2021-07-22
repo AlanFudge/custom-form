@@ -11,7 +11,7 @@ export default function ResponseSucess() {
 
     return (
         <div className='response-success'>
-            <h2>Submission Successfull</h2>
+            <h2>Submission Successful</h2>
             <p>
                 Thank you for submitting your response! You will be redirected to home
             </p>
