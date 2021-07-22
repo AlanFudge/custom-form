@@ -28,7 +28,7 @@ export default function NavBar() {
                 <img src={forwardButton}></img>
             </div>
             <NavLink to='/' activeClassName='active-link' exact>Home</NavLink>
-            <NavLink to='/forms' activeClassName='active-link' exact>Edit/View Forms</NavLink>
+            <NavLink to='/forms' activeClassName='active-link'>Edit/View Forms</NavLink>
         </nav>
     )
 }
