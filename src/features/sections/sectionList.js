@@ -11,10 +11,10 @@ export default function SectionList() {
     const [addNewSection, setAddNewSection] = useState(false);
 
     return (
-        <>
+        <div className="section-list">
             {
-                forms[formId].sections.map(id => {
-                    return <Section sectionId={id} />
+                forms[formId].sections.map((id, i) => {
+                    return <Section sectionId={id} sectionNum={i + 1} />
                 })
             }
             {
@@ -26,6 +26,6 @@ export default function SectionList() {
                     :
                     <button onClick={e => setAddNewSection(true)}>Add New Section</button>
             }
-        </>
+        </div>
     );
 }

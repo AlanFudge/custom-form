@@ -7,7 +7,7 @@ import Input from '../inputs/input';
 import NewSectionForm from './newSectionForm';
 
 
-export default function Section({ sectionId }) {
+export default function Section({ sectionId, sectionNum }) {
     const sections = useSelector(selectSections);
     const section = sections[sectionId];
     const dispatch = useDispatch();
@@ -29,33 +29,36 @@ export default function Section({ sectionId }) {
 
     return (
         <div className='edit-section'>
-            {
-                edit ?
-                    <NewSectionForm edit={edit} setEdit={setEdit} section={section} />
-                    :
-                    <>
-                        <h2>{section.name}</h2>
-                        <p>{section.description}</p>
-                        <p>{section.format}</p>
-                        <button onClick={e => setEdit(true)}>Edit</button>
-                    </>
-            }
-            <button className='delete' onClick={handleDelete}>Delete Section</button>
-            <div className='edit-input-list'>
+            <h2 className='edit-section-header'>Section {sectionNum}</h2>
+            <div className='edit-section-content'>
+                <button className='delete' onClick={handleDelete}>Delete Section</button>
                 {
-                    section.inputs.map(id => {
-                        return <Input inputId={id} sectionId={sectionId} />
-                    })
-                }
-                {
-                    addInput ?
-                        <>
-                            <NewInputForm sectionId={sectionId} />
-                            <button onClick={e => setAddInput(false)}>Collapse Add Input Form</button>
-                        </>
+                    edit ?
+                        <NewSectionForm edit={edit} setEdit={setEdit} section={section} />
                         :
-                        <button onClick={e => setAddInput(true)}>Add Input</button>                    
+                        <div className='edit-section-details'>
+                            <h3>{section.name}</h3>
+                            <p>{section.description}</p>
+                            <p>{section.format}</p>
+                            <button className='edit-section-details-button' onClick={e => setEdit(true)}>Edit</button>
+                        </div>
                 }
+                <div className='edit-input-list'>
+                    {
+                        section.inputs.map(id => {
+                            return <Input inputId={id} sectionId={sectionId} />
+                        })
+                    }
+                    {
+                        addInput ?
+                            <>
+                                <NewInputForm sectionId={sectionId} />
+                                <button onClick={e => setAddInput(false)}>Collapse Add Input Form</button>
+                            </>
+                            :
+                            <button onClick={e => setAddInput(true)}>Add Input</button>
+                    }
+                </div>
             </div>
         </div>
     )

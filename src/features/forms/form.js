@@ -13,17 +13,21 @@ export default function Form() {
 
     return (
         <>
-            <h3>I Am A Form {form.name}: {form.id}</h3>
-            {
-                edit ?
-                    <NewFormForm edit={edit} setEdit={setEdit} form={form} />
-                    :
-                    <>
-                        <h3>{form.name}</h3>
-                        <h4>{form.externalTarget}</h4>
-                        <button value='Edit' onClick={e => setEdit(true)}>Edit</button>
-                    </>
-            }
+            <div className="edit-form">
+                {
+                    edit ?
+                        <NewFormForm edit={edit} setEdit={setEdit} form={form} />
+                        :
+                        <div className="edit-form-details">
+                            <h2>Edit Form</h2>
+                            <div className="edit-form-details-content">
+                                <h3>{form.name}</h3>
+                                <h3>{form.externalTarget}</h3>
+                                <button className="edit-form-edit-button" value='Edit' onClick={e => setEdit(true)}>Edit</button>
+                            </div>
+                        </div>
+                }
+            </div>
             <SectionList />
         </>
     )
