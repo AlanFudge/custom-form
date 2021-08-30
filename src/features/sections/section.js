@@ -53,10 +53,10 @@ export default function Section({ sectionId, sectionNum }) {
                         addInput ?
                             <>
                                 <NewInputForm sectionId={sectionId} />
-                                <button onClick={e => setAddInput(false)}>Collapse Add Input Form</button>
+                                <button className='cancel-add-input' onClick={e => setAddInput(false)}>Cancel</button>
                             </>
                             :
-                            <button onClick={e => setAddInput(true)}>Add Input</button>
+                            <button className='add-input' onClick={e => setAddInput(true)}>Add Input</button>
                     }
                 </div>
             </div>

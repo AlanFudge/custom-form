@@ -25,4 +25,15 @@
         position: absolute;
         right: 10px;
     }
+
+    .edit-input-list {
+        .add-input {
+            @include button($light-text-color, $go-color);
+            @extend %margin-10-0;
+        }
+        .cancel-add-input {
+            @include button($light-text-color, $danger-color);
+            @extend %margin-10-0
+        }
+    }
 }
