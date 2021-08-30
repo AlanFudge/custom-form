@@ -8,6 +8,7 @@
     width: 100%;
     position: fixed;
     height: $nav-height;
+    z-index: 9999;
 
     .go-back {
         @extend %flex-center-center;
