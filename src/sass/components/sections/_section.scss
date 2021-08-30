@@ -4,6 +4,7 @@
     position: relative;
 
     .edit-section-details {
+        padding-right: 150px;
         .edit-section-details-button {
             @include button($light-text-color, $go-color);
         }
