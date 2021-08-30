@@ -7,9 +7,11 @@
 @import 'components/responseSuccess';
 @import 'components/forms/formList';
 @import 'components/forms/newFormForm';
-// @import 'components/forms/form';
+@import 'components/forms/form';
 @import 'components/forms//displayForm';
 @import 'components/sections/displaySection';
+@import 'components/sections/sectionList';
+@import 'components/sections/section';
 
 body {
     @extend %no-padding-margin;
