@@ -1,0 +1,41 @@
+.section-form {
+    input[type=text] {
+        @extend %margin-10-0;
+        display: block;
+        width: calc(100% - 10px);
+        overflow-x: wrap;
+        font-size: 20px;
+    }
+
+    input[type=text]:first-of-type {
+        font-weight: bold;
+    }
+
+    select {
+        font-size: 20px;
+    }
+
+    input[type=submit] {
+        @include button($light-text-color, $go-color);
+        @extend %margin-10-0;
+        display: block;
+    }
+
+    .cancel-edit-section {
+        @include button($light-text-color, $danger-color);
+        @extend %margin-10-0;
+        display: block;
+    }
+}
+
+.new-section-form {
+    @include card(h1, form);
+}
+
+.edit-section-details {
+    .cancel-edit-section {
+        @include button($light-text-color, $danger-color);
+        @extend %margin-10-0;
+        display: block;
+    }
+}

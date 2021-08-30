@@ -1,3 +1,13 @@
 .section-list {
     @extend %center-grid;
+
+    .add-section {
+        @include button($light-text-color, $go-color);
+        @extend %margin-10-0;
+    }
+
+    .cancel-add-section {
+        @include button($light-text-color, $danger-color);
+        @extend %margin-20-0;
+    }
 }
