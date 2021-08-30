@@ -21,10 +21,10 @@ export default function SectionList() {
                 addNewSection ?
                     <>
                         <NewSectionForm />
-                        <button onClick={e => setAddNewSection(false)}>Collapse Form</button>
+                        <button className='cancel-add-section' onClick={e => setAddNewSection(false)}>Cancel</button>
                     </>
                     :
-                    <button onClick={e => setAddNewSection(true)}>Add New Section</button>
+                    <button className='add-section' onClick={e => setAddNewSection(true)}>Add New Section</button>
             }
         </div>
     );
