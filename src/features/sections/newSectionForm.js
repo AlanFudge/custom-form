@@ -53,7 +53,7 @@ export default function NewSectionForm({ edit = false, setEdit, section }) {
     }
 
     return (
-        <section>
+        <section className={edit ? 'edit-section-details section-form' : 'new-section-form section-form'}>
             {
                 edit ? null :
                     <h1>Add New Section</h1>
@@ -79,7 +79,7 @@ export default function NewSectionForm({ edit = false, setEdit, section }) {
                 </select>
                 <input type='submit' value={edit ? 'Save' : 'Add New Section'}></input>
                 {
-                    edit ? <button onClick={handleCancel}>Cancel</button> : null
+                    edit ? <button className='cancel-edit-section' onClick={handleCancel}>Cancel</button> : null
                 }
             </form>
         </section>
