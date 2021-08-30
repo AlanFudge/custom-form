@@ -1,5 +1,5 @@
 .display-form {
-    grid-column: 4 / span 6;
+    @extend %center-grid;
 
     .display-form-header {
         @include card(h1, p);

@@ -1,6 +1,6 @@
 #forms-container {
     @extend %flex-center-space-around;
-    grid-column: 4 / span 6;
+    @extend %center-grid;
     padding: 40px 0;
     flex-wrap: wrap;
 

@@ -1,6 +1,6 @@
 .new-edit-form {
     @include card(h1, form);
-    margin: 20px;
+    @extend %margin-20-0;
     min-width: 300px;
     justify-self: stretch;
 
@@ -11,6 +11,7 @@
 
     input {
         font-size: 20px;
+        font-weight: bold;
 
         &[type=submit] {
             @include button($light-text-color, $go-color);

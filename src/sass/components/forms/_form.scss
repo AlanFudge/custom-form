@@ -1,0 +1,13 @@
+.edit-form {
+    @extend %center-grid;
+    font-size: 20px;
+
+    .edit-form-details {
+        @include card(h2, ".edit-form-details-content");
+        @extend %margin-20-0;
+    }
+
+    .edit-form-edit-button {
+        @include button($light-text-color, $go-color);
+    }
+}
