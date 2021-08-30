@@ -43,10 +43,16 @@ export default function Section({ sectionId, sectionNum }) {
                             <button className='edit-section-details-button' onClick={e => setEdit(true)}>Edit</button>
                         </div>
                 }
+                <hr />
                 <div className='edit-input-list'>
                     {
                         section.inputs.map(id => {
-                            return <Input inputId={id} sectionId={sectionId} />
+                            return (
+                                <>
+                                    <Input inputId={id} sectionId={sectionId} />
+                                    <hr />
+                                </>
+                            );
                         })
                     }
                     {
