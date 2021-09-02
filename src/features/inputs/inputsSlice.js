@@ -92,6 +92,48 @@ const initialState = {
             step: '1'
         }
     },
+    "dbda2ef8-1613-40e8-8730-fa1b13a8191e": {
+        inputId: "dbda2ef8-1613-40e8-8730-fa1b13a8191e",
+        name: "multi_1",
+        type: "radio",
+        title: "Mulitple choice 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: null,
+            step: null
+        },
+        selectOptions: [
+            "answer 1"
+            ,"answer 2"
+            ,"answer 3"
+            ," answer 4"
+        ]
+    },
+    '31bb2b7c-cebb-4a8d-a38d-e5aab55166ba': {
+        inputId: "31bb2b7c-cebb-4a8d-a38d-e5aab55166ba",
+        name: "multi_2",
+        type: "radio",
+        title: "Multiple Choice 2",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: null,
+            step: null
+        },
+        selectOptions: [
+            "answer 1"
+            ,"answer 2"
+            ,"answer 3"
+            ," answer 4"
+        ]
+    }
 }
 
 const inputsSlice = createSlice({

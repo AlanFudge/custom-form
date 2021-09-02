@@ -24,6 +24,16 @@ const initialState = {
             '12b7b138-9f4d-4efe-b33b-1bab0f024b0f',
             '38e33044-5f1b-493c-a0bc-6921406c8b50'
         ]
+    },
+    "daf28cfb-1ec0-4e3c-b27e-99e457cb47bf": {
+        sectionId: "daf28cfb-1ec0-4e3c-b27e-99e457cb47bf",
+        name: "Multiple Choice",
+        description: "Please select one of the multiple choice options",
+        format: "single-column",
+        inputs: [
+            "dbda2ef8-1613-40e8-8730-fa1b13a8191e",
+            "31bb2b7c-cebb-4a8d-a38d-e5aab55166ba"
+        ]
     }
 }
 
