@@ -43,7 +43,6 @@ export default function FormList() {
                                 <Link to={`/forms/${form.formId}/responses`}>
                                     <p>View Responses</p>
                                 </Link>
-                                <p className='external-target-info'>{`External Target: ${form.externalTarget ? form.externalTarget : 'None'}`}</p>
                                 <button onClick={handleDelete} formId={form.formId}>Delete Form</button>
                             </div>
                         </div>
