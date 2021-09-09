@@ -34,6 +34,16 @@ const initialState = {
             "dbda2ef8-1613-40e8-8730-fa1b13a8191e",
             "31bb2b7c-cebb-4a8d-a38d-e5aab55166ba"
         ]
+    },
+    '2dc8747f-2a7e-4a8d-b0f8-cfd0bb2c04f5': {
+        sectionId: '2dc8747f-2a7e-4a8d-b0f8-cfd0bb2c04f5',
+        name: 'Select Inputs',
+        description: 'Please select one of the options from the dropdown menus below.',
+        format: 'single-column',
+        inputs: [
+            '06ba6179-c5f2-4210-bfbb-dcb33b72a38d',
+            '0f8b4207-2c4a-4ccc-9a46-970f1a923bd1'
+        ]
     }
 }
 

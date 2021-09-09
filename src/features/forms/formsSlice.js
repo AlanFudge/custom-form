@@ -12,7 +12,8 @@ const initialState = {
         sections: [
             'df26778a-691c-49ec-8050-57198bf8f654',
             '5cd8257b-71f7-4a32-9c99-8fb682c8e128',
-            "daf28cfb-1ec0-4e3c-b27e-99e457cb47bf"
+            'daf28cfb-1ec0-4e3c-b27e-99e457cb47bf',
+            '2dc8747f-2a7e-4a8d-b0f8-cfd0bb2c04f5'
         ]
     }
 }

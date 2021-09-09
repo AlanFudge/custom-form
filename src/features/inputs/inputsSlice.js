@@ -108,16 +108,16 @@ const initialState = {
         },
         selectOptions: [
             "answer 1"
-            ,"answer 2"
-            ,"answer 3"
-            ," answer 4"
+            , "answer 2"
+            , "answer 3"
+            , "answer 4"
         ]
     },
     '31bb2b7c-cebb-4a8d-a38d-e5aab55166ba': {
         inputId: "31bb2b7c-cebb-4a8d-a38d-e5aab55166ba",
         name: "multi_2",
         type: "radio",
-        title: "Multiple Choice 2",
+        title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaque?",
         attributes: {
             min: null,
             max: null,
@@ -128,10 +128,52 @@ const initialState = {
             step: null
         },
         selectOptions: [
-            "answer 1"
-            ,"answer 2"
-            ,"answer 3"
-            ," answer 4"
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus in massa tempor nec feugiat."
+            , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien pellentesque habitant morbi tristique senectus. Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum."
+            , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Mi tempus imperdiet nulla malesuada."
+        ]
+    },
+    '06ba6179-c5f2-4210-bfbb-dcb33b72a38d': {
+        inputId: "06ba6179-c5f2-4210-bfbb-dcb33b72a38d",
+        name: "select_1",
+        type: "select",
+        title: "Select Option 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: null,
+            step: null
+        },
+        selectOptions: [
+            "option 1",
+            "option 2",
+            "option 3",
+            "option 4",
+        ]
+    },
+    '0f8b4207-2c4a-4ccc-9a46-970f1a923bd1': {
+        inputId: "0f8b4207-2c4a-4ccc-9a46-970f1a923bd1",
+        name: "select_2",
+        type: "select",
+        title: "Select Option 2",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: null,
+            step: null
+        },
+        selectOptions: [
+            "option 1",
+            "option 2",
+            "option 3",
+            "option 4",
         ]
     }
 }
