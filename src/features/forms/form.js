@@ -22,7 +22,7 @@ export default function Form() {
                             <h2>Edit Form</h2>
                             <div className="edit-form-details-content">
                                 <h3>{form.name}</h3>
-                                <h3>{form.externalTarget}</h3>
+                                <h3>External Target: {form.externalTarget}</h3>
                                 <button className="edit-form-edit-button" value='Edit' onClick={e => setEdit(true)}>Edit</button>
                             </div>
                         </div>
