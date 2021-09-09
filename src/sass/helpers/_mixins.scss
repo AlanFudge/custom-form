@@ -1,8 +1,8 @@
 @mixin card($header, $content) {
+    @extend %standard-box-shadow;
     background-color: $card-color;
     border: $card-edge;
     border-radius: 10px;
-    box-shadow: 3px 3px 5px $shadow-mid;
     overflow-y: hidden;
     align-self: stretch;
 

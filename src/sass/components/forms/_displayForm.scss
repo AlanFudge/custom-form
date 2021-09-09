@@ -12,6 +12,7 @@
 
     input[type=submit] {
         @include button($light-text-color, $go-color);
+        @extend %standard-box-shadow;
         margin: 20px 0;
         font-size: 20px;
     }

@@ -3,11 +3,13 @@
 
     .add-section {
         @include button($light-text-color, $go-color);
+        @extend %standard-box-shadow;
         @extend %margin-10-0;
     }
 
     .cancel-add-section {
         @include button($light-text-color, $danger-color);
+        @extend %standard-box-shadow;
         @extend %margin-20-0;
     }
 }

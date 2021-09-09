@@ -10,6 +10,12 @@
     justify-content: space-around;
 }
 
+%flex-center-space-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 %no-padding-margin {
     padding: 0;
     margin: 0;
@@ -30,4 +36,8 @@
 
 %margin-20-0 {
     margin: 20px 0;
+}
+
+%standard-box-shadow {
+    box-shadow: 3px 3px 5px $shadow-mid;
 }
