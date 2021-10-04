@@ -6,7 +6,7 @@
     .edit-section-details {
         padding-right: 150px;
         .edit-section-details-button {
-            @include button($light-text-color, $go-color);
+            @include button($light-text-color, $edit-color);
         }
 
         h3 {
@@ -29,7 +29,7 @@
 
     .edit-input-list {
         .add-input {
-            @include button($light-text-color, $go-color);
+            @include button($light-text-color, $edit-color);
             @extend %margin-10-0;
         }
         .cancel-add-input {

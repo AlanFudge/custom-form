@@ -8,6 +8,6 @@
     }
 
     .edit-form-edit-button {
-        @include button($light-text-color, $go-color);
+        @include button($light-text-color, $edit-color);
     }
 }
