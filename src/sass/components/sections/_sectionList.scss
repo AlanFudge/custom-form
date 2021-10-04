@@ -2,7 +2,7 @@
     @extend %center-grid;
 
     .add-section {
-        @include button($light-text-color, $go-color);
+        @include button($light-text-color, $edit-color);
         @extend %standard-box-shadow;
         @extend %margin-10-0;
     }
