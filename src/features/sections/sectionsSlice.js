@@ -44,6 +44,22 @@ const initialState = {
             '06ba6179-c5f2-4210-bfbb-dcb33b72a38d',
             '0f8b4207-2c4a-4ccc-9a46-970f1a923bd1'
         ]
+    },
+    'b969a647-b30e-49de-b8eb-038785629a01': {
+        sectionId: 'b969a647-b30e-49de-b8eb-038785629a01',
+        name: 'Remainder Section',
+        'description': 'This section contains all of the remaining form inputs that can be used currently.',
+        format: 'single-column',
+        inputs: [
+            "269aa62d-a24d-45da-9770-72d21619fa14",
+            "01cd1fdd-95a7-4654-bc91-c7bdda990886",
+            "8307b3ac-2e3e-4f8b-86bd-a1763a6448df",
+            "704b55fd-44d6-4a76-9a45-826a318455c1",
+            "0274b7cb-d7da-4975-b77e-f13d43afd07c",
+            "a6c84e72-4652-4477-9544-89756aba7571",
+            "dbb73a38-508c-4ea3-a031-29c2cc9cfea9",
+            "80b30a27-262b-40d3-b414-8796fa6d54d1"
+        ]
     }
 }
 

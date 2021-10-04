@@ -175,6 +175,133 @@ const initialState = {
             "option 3",
             "option 4",
         ]
+    },
+    '269aa62d-a24d-45da-9770-72d21619fa14': {
+        inputId: "269aa62d-a24d-45da-9770-72d21619fa14",
+        name: "text_input_1",
+        type: "text",
+        title: "Text Input 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: "/.+,.+/",
+            maxLength: null,
+            required: true,
+            placeholder: "words, seperated, by, comma",
+            step: null,
+        },
+        selectOptions: []
+    },
+    '01cd1fdd-95a7-4654-bc91-c7bdda990886': {
+        inputId: "01cd1fdd-95a7-4654-bc91-c7bdda990886",
+        name: "color_input_1",
+        type: "color",
+        title: "Color Input 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: null,
+            step: null,
+        },
+        selectOptions: []
+    },
+    '8307b3ac-2e3e-4f8b-86bd-a1763a6448df': {
+        inputId: "8307b3ac-2e3e-4f8b-86bd-a1763a6448df",
+        name: "email_input_1",
+        type: "email",
+        title: "Email Input 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: "example@someurl.com",
+            step: null,
+        },
+        selectOptions: []
+    },
+    '704b55fd-44d6-4a76-9a45-826a318455c1': {
+        inputId: '704b55fd-44d6-4a76-9a45-826a318455c1',
+        name: "phone_input_1",
+        type: "tel",
+        title: "Phone Input 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: "(469)-766-4674",
+            step: null,
+        },
+        selectOptions: []
+    },
+    '0274b7cb-d7da-4975-b77e-f13d43afd07c': {
+        inputId: "0274b7cb-d7da-4975-b77e-f13d43afd07c",
+        name: "url_input_1",
+        type: "url",
+        title: "URL Input 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: "https://www.someurl.com/",
+            step: null,
+        },
+        selectOptions: []
+    }, 'a6c84e72-4652-4477-9544-89756aba7571': {
+        inputId: "a6c84e72-4652-4477-9544-89756aba7571",
+        name: "week_input_1",
+        type: "week",
+        title: "Week Input 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: null,
+            step: null,
+        },
+        selectOptions: []
+    },
+    'dbb73a38-508c-4ea3-a031-29c2cc9cfea9': {
+        inputId: "dbb73a38-508c-4ea3-a031-29c2cc9cfea9",
+        name: "date_input_1",
+        type: "date",
+        title: "Date Input 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: null,
+            step: null,
+        },
+        selectOptions: []
+    },
+    '80b30a27-262b-40d3-b414-8796fa6d54d1': {
+        inputId: "80b30a27-262b-40d3-b414-8796fa6d54d1",
+        name: "datetime_input_1",
+        type: "datetime-local",
+        title: "Date Time Input 1",
+        attributes: {
+            min: null,
+            max: null,
+            pattern: null,
+            maxLength: null,
+            required: true,
+            placeholder: null,
+            step: null,
+        },
+        selectOptions: []
     }
 }
 
