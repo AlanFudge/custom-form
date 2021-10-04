@@ -62,22 +62,23 @@ export default function Input({ inputId, sectionId }) {
                 edit ?
                     <NewInputForm sectionId={sectionId} edit={edit} setEdit={setEdit} input={input} />
                     :
-                    <div>
+                    <div className="input">
+                    <div className="swap-button-holder">
                         <button className='swap-up' onClick={handleSwapUp}>↑</button>
                         <button className='swap-down' onClick={handleSwapDown}>↓</button>
-                        <h3>{input.inputId}</h3>
-                        <h4>{input.name}</h4>
-                        <h5>{input.title}</h5>
-                        <p>{input.type}</p>
+                    </div>
+                        <h3>{input.title}</h3>
+                        <p>Input Name: {input.name}</p>
+                        <p>Input Type: {input.type}</p>
                         <ul>
                             {
                                 Object.keys(input.attributes).map(key => {
-                                    return <li>{`${key}: ${input.attributes[key]}`}</li>
+                                    return input.attributes[key] ? <li>{`${key}: ${input.attributes[key]}`}</li> : null;
                                 })
                             }
                         </ul>
-                        <button onClick={e => setEdit(true)}>Edit</button>
-                        <button onClick={deleteInputHandler}>Delete Input</button>
+                        <button className="edit-input-button" onClick={e => setEdit(true)}>Edit</button>
+                        <button className="delete-input-button" onClick={deleteInputHandler}>Delete Input</button>
                     </div>
             }
         </>

@@ -13,7 +13,7 @@ export default function DisplayInput({ inputId }) {
 
     if (type === 'select') {
         return (
-            <div id={inputId}>
+            <div id={inputId} className='display-input-select display-input'>
                 <label htmlFor={name}>{title} {inputAttributes.required ? <span className='required-ast'>*</span> : null}</label>
                 <select {...inputAttributes}>
                     {
@@ -26,17 +26,16 @@ export default function DisplayInput({ inputId }) {
         )
     } else if (type === 'radio') {
         return (
-            <div id={inputId}>
-                <label htmlFor={name}>{title}</label>
-                <br />
+            <div id={inputId} className='display-input-radio display-input'>
+                <p htmlFor={name}>{title} {inputAttributes.required ? <span className='required-ast'>*</span> : null}</p>
                 {
                     selectOptions.map(value => {
                         return (
-                            <>
+                            <div className='display-input-radio-choice'>
                                 <input {...inputAttributes} value={value}></input>
-                                <label htmlFor={value}>{value} {inputAttributes.required ? <span className='required-ast'>*</span> : null}</label>
+                                <label htmlFor={value}>{value}</label>
                                 <br />
-                            </>
+                            </div>
                         )
                     })
                 }
@@ -45,7 +44,7 @@ export default function DisplayInput({ inputId }) {
     }
 
     return (
-        <div id={inputId}>
+        <div id={inputId} className='display-input'>
             <label htmlFor={name}>{title} {inputAttributes.required ? <span className='required-ast'>*</span> : null}</label>
             <input {...inputAttributes}></input>
         </div>

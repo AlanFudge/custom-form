@@ -99,22 +99,32 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='new-input-form' onSubmit={handleSubmit}>
+        <div className='input-container'>
+            <label htmlFor='title'>Input Title</label>
             <input
+                name='title'
                 value={title}
                 onChange={e => setTitle(e.currentTarget.value)}
                 type='text'
                 placeholder='Displayed title for input'
                 required>
             </input>
+        </div>
+        <div className='input-container'>
+            <label htmlFor='name'>Input Name</label>
             <input
+                name='name'
                 value={name}
                 onChange={e => setName(e.currentTarget.value)}
                 type='text'
-                placeholder='Name of input with no spaces. should be unique.' pattern='\S+'
+                placeholder='Unique Name of Input' pattern='\S+'
                 required>
             </input>
-            <select value={type} onChange={e => setType(e.currentTarget.value)}>
+        </div>
+        <div className='input-container'>
+            <label htmlFor='type'>Input Type</label>
+            <select name='type' value={type} onChange={e => setType(e.currentTarget.value)}>
                 <option value='text'>text</option>
                 <option value='number'>number</option>
                 <option value='checkbox'>checkbox</option>
@@ -130,6 +140,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                 <option value='select'>select</option>
                 <option value='radio'>radio (multiple choice)</option>
             </select>
+        </div>
             {
                 type === 'select' || type === 'radio' ?
                     <input
@@ -142,7 +153,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
             }
             <div className='attributes-list'>
                 <p>Leave empty for no attribute</p>
-                <div>
+                <div className='input-container'>
                     <label htmlFor='required'>Required?</label>
                     <input
                         name='required'
@@ -151,7 +162,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                         onChange={e => setRequired(!required)}>
                     </input>
                 </div>
-                <div>
+                <div className='input-container'>
                     <label htmlFor='min'>Min</label>
                     <input
                         name='min'
@@ -160,7 +171,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                         onChange={e => e.currentTarget.value === '' ? setMin(null) : setMin(e.currentTarget.value)}>
                     </input>
                 </div>
-                <div>
+                <div className='input-container'>
                     <label htmlFor='max'>Max</label>
                     <input
                         name='max'
@@ -169,7 +180,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                         onChange={e => e.currentTarget.value === '' ? setMax(null) : setMax(e.currentTarget.value)}>
                     </input>
                 </div>
-                <div>
+                <div className='input-container'>
                     <label htmlFor='pattern'>RegEx Pattern</label>
                     <input
                         name='pattern'
@@ -179,7 +190,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                         onChange={e => e.currentTarget.value === '' ? setPattern(null) : setPattern(e.currentTarget.value)}>
                     </input>
                 </div>
-                <div>
+                <div className='input-container'>
                     <label htmlFor='maxLength'>Max Length</label>
                     <input
                         name='max-length'
@@ -189,7 +200,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                         onChange={e => e.currentTarget.value === '' ? setMaxLength(null) : setMaxLength(e.currentTarget.value)}>
                     </input>
                 </div>
-                <div>
+                <div className='input-container'>
                     <label htmlFor='step'>Step</label>
                     <input
                         type='number'
@@ -199,7 +210,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                         onChange={e => e.currentTarget.value === '' ? setStep(null) : setStep(e.currentTarget.value)}>
                     </input>
                 </div>
-                <div>
+                <div className='input-container'>
                     <label htmlFor='placeholder'>Placeholder</label>
                     <input
                         type='text'
@@ -209,9 +220,9 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                     </input>
                 </div>
             </div>
-            <input type='submit' value={edit ? 'Save' : 'Add New Input'}></input>
+            <input className='save-input' type='submit' value={edit ? 'Save' : 'Add New Input'}></input>
             {
-                edit ? <button onClick={handleCancel}>Cancel</button> : null
+                edit ? <button className='cancel-edit-input' onClick={handleCancel}>Cancel</button> : null
             }
         </form>
     )
