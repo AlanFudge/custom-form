@@ -1,0 +1,70 @@
+.display-input {
+    @extend %input-container;
+
+    input[type="text"],
+    input[type="number"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="color"],
+    input[type="week"],
+    input[type="date"],
+    input[type="datetime-local"],
+    select {
+        @extend %standard-input;
+    }
+
+    input[type="color"] {
+        height: 29px;
+        width: 204px;
+    }
+
+    input[type="checkbox"] {
+        height: 25px;
+        width: 25px;
+    }
+
+    .required-ast {
+        color: $danger-color;
+    }
+}
+
+.display-input-radio {
+    display: block;
+
+    p {
+        margin: 0 0 20px 0;
+        font-size: 20px;
+    }
+
+    .display-input-radio-choice {
+        @extend %flex-center-center;
+        margin: 10px;
+        justify-content: flex-start;
+
+        input {
+            margin: 0 10px;
+            height: 20px;
+            width: 20px;
+            flex-shrink: 0;
+        }
+
+        label {
+            @extend %flex-center-center;
+            font-size: 16px;
+        }
+    }
+}
+
+.display-input-select {
+    display: block;
+
+    label {
+        display: block;
+    }
+
+    select {
+        margin: 10px;
+        font-size: 18px;
+    }
+}

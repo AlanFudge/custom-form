@@ -13,6 +13,9 @@
 @import 'components/sections/sectionList';
 @import 'components/sections/section';
 @import 'components/sections/newSectionForm';
+@import 'components/inputs/displayInput';
+@import 'components/inputs/input';
+@import 'components/inputs/newInputForm';
 
 body {
     @extend %no-padding-margin;

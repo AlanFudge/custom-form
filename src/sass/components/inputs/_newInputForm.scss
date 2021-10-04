@@ -1,0 +1,30 @@
+.new-input-form {
+    input:not([type="submit"]),
+    select {
+        @extend %standard-input;
+    }
+
+    .input-container {
+        @extend %input-container;
+
+        input[type="checkbox"] {
+            width: 25px;
+        }
+
+        select {
+            height: 29px;
+            width: 204px;
+        }
+    }
+
+    .save-input {
+        @include button($light-text-color, $go-color);
+        @extend %margin-10-0;
+        display: block
+    }
+
+    .cancel-edit-input {
+        @include button($light-text-color, $danger-color);
+        @extend %margin-10-0;
+    }
+}
