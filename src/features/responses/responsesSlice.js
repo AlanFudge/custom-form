@@ -4,6 +4,7 @@ const initialState = {
     'b6d15384-2aab-40eb-87f5-c6bc9fac14ef': {
         formId: "71f7163b-924e-40f2-9ab1-a96b2ad7f858",
         responseId: "b6d15384-2aab-40eb-87f5-c6bc9fac14ef",
+        timestamp: '2021-10-05T18:25:35.804Z',
         body: {
             soloflight: "on",
             lessonsgraded: "on",
@@ -28,6 +29,7 @@ const initialState = {
     'b6d15384-3bbe-40eb-87f5-c6bc9fac14ef': {
         formId: "71f7163b-924e-40f2-9ab1-a96b2ad7f858",
         responseId: "b6d15384-3bbe-40eb-87f5-c6bc9fac14ef",
+        timestamp: '2021-10-05T17:25:35.804Z',
         body: {
             soloflight: "on",
             lessonsgraded: "on",
@@ -56,7 +58,7 @@ const responsesSlice = createSlice({
     initialState,
     reducers: {
         addResponse(state, action) {
-            state[action.payload.responseId] = action.payload;
+            state[action.payload.responseId] = {...action.payload, timestamp: new Date()};
         },
         deleteResponse(state, action) {
             delete state[action.payload.responseId];
