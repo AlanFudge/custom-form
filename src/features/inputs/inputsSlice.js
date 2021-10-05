@@ -184,7 +184,7 @@ const initialState = {
         attributes: {
             min: null,
             max: null,
-            pattern: "/.+,.+/",
+            pattern: ".+,.+",
             maxLength: null,
             required: true,
             placeholder: "words, seperated, by, comma",

@@ -185,7 +185,7 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
                     <input
                         name='pattern'
                         type='text'
-                        placeholder='/[a-z]/gi'
+                        placeholder='Regex Pattern...'
                         value={pattern}
                         onChange={e => e.currentTarget.value === '' ? setPattern(null) : setPattern(e.currentTarget.value)}>
                     </input>
