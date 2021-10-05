@@ -16,6 +16,8 @@
 @import 'components/inputs/displayInput';
 @import 'components/inputs/input';
 @import 'components/inputs/newInputForm';
+@import 'components/responses/responseList';
+@import 'components/responses/response';
 
 body {
     @extend %no-padding-margin;
