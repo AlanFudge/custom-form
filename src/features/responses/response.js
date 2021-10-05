@@ -8,8 +8,6 @@ export default function Response({ responseId }) {
     const response = responses[responseId];
     const responseBody = response.body;
 
-    console.log(responseBody);
-
     const handleDelete = (e) => {
         e.preventDefault();
 
@@ -18,20 +16,23 @@ export default function Response({ responseId }) {
 
     return (
         <div className='response'>
-            <h3>{response.responseId}</h3>
-            <h4>{response.formId}</h4>
-            <ul>
-                {
-                    Object.keys(responseBody).map(key => {
-                        return (
-                            <li>
-                                {`${key}: ${responseBody[key]}`}
-                            </li>
-                        );
-                    })
-                }
-            </ul>
-            <button onClick={handleDelete}>Delete Response</button>
+            <h1 className='response-header'>
+               {new Date(response.timestamp).toLocaleString()} 
+            </h1>
+            <div className='response-body'>
+                <ul>
+                    {
+                        Object.keys(responseBody).map(key => {
+                            return (
+                                <li>
+                                    <span>{key}:</span> {responseBody[key]}
+                                </li>
+                            );
+                        })
+                    }
+                </ul>
+                <button onClick={handleDelete}>Delete Response</button>
+            </div>
         </div>
     )
 }

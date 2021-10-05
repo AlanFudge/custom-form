@@ -11,10 +11,12 @@ export default function ResponseList() {
 
     if (responseIdsForForm.length === 0) {
         return (
-            <>
-                <h1>Nothing to see here!</h1>
-                <p>There are no responses for this form!</p>
-            </>
+            <div className='response-list'>
+                <div className='no-responses'>
+                    <h1>Nothing to see here!</h1>
+                    <p>There are no responses for this form!</p>
+                </div>
+            </div>
         )
     }
 
