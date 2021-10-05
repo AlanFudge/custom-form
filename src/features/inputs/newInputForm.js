@@ -100,55 +100,59 @@ export default function NewInputForm({ sectionId, edit = false, setEdit, input }
 
     return (
         <form className='new-input-form' onSubmit={handleSubmit}>
-        <div className='input-container'>
-            <label htmlFor='title'>Input Title</label>
-            <input
-                name='title'
-                value={title}
-                onChange={e => setTitle(e.currentTarget.value)}
-                type='text'
-                placeholder='Displayed title for input'
-                required>
-            </input>
-        </div>
-        <div className='input-container'>
-            <label htmlFor='name'>Input Name</label>
-            <input
-                name='name'
-                value={name}
-                onChange={e => setName(e.currentTarget.value)}
-                type='text'
-                placeholder='Unique Name of Input' pattern='\S+'
-                required>
-            </input>
-        </div>
-        <div className='input-container'>
-            <label htmlFor='type'>Input Type</label>
-            <select name='type' value={type} onChange={e => setType(e.currentTarget.value)}>
-                <option value='text'>text</option>
-                <option value='number'>number</option>
-                <option value='checkbox'>checkbox</option>
-                <option value='color'>color</option>
-                <option value='date'>date</option>
-                <option value='datetime-local'>datetime-local</option>
-                <option value='email'>email</option>
-                <option value='month'>month</option>
-                <option value='tel'>telephone</option>
-                <option value='time'>time</option>
-                <option value='url'>url</option>
-                <option value='week'>week</option>
-                <option value='select'>select</option>
-                <option value='radio'>radio (multiple choice)</option>
-            </select>
-        </div>
+            <div className='input-container'>
+                <label htmlFor='title'>Input Title</label>
+                <input
+                    name='title'
+                    value={title}
+                    onChange={e => setTitle(e.currentTarget.value)}
+                    type='text'
+                    placeholder='Displayed title for input'
+                    required>
+                </input>
+            </div>
+            <div className='input-container'>
+                <label htmlFor='name'>Input Name</label>
+                <input
+                    name='name'
+                    value={name}
+                    onChange={e => setName(e.currentTarget.value)}
+                    type='text'
+                    placeholder='Unique Name of Input' pattern='\S+'
+                    required>
+                </input>
+            </div>
+            <div className='input-container'>
+                <label htmlFor='type'>Input Type</label>
+                <select name='type' value={type} onChange={e => setType(e.currentTarget.value)}>
+                    <option value='text'>text</option>
+                    <option value='number'>number</option>
+                    <option value='checkbox'>checkbox</option>
+                    <option value='color'>color</option>
+                    <option value='date'>date</option>
+                    <option value='datetime-local'>datetime-local</option>
+                    <option value='email'>email</option>
+                    <option value='month'>month</option>
+                    <option value='tel'>telephone</option>
+                    <option value='time'>time</option>
+                    <option value='url'>url</option>
+                    <option value='week'>week</option>
+                    <option value='select'>select</option>
+                    <option value='radio'>radio (multiple choice)</option>
+                </select>
+            </div>
             {
                 type === 'select' || type === 'radio' ?
+                <div className='input-container'>
+                    <label htmlFor='select-list'>Select Options</label>
                     <input
+                        name='select-list'
                         type='text'
                         value={selectOptions.join(',')}
                         onChange={handleSelectOptionsChange}
                         placeholder='comma seperated list of select options or multiple choice options'>
                     </input>
+                </div>
                     : null
             }
             <div className='attributes-list'>
