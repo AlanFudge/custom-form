@@ -11,7 +11,7 @@ import '../sass/main.scss';
 
 export default function App() {
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <NavBar />
             <Switch>
                 <Route path='/forms/:formId/responses'>
