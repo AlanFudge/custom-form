@@ -1,8 +1,0 @@
-.response-list {
-    @extend %center-grid;
-
-    .no-responses {
-        @include card(h1, p);
-        @extend %margin-20-0;
-    }
-}
