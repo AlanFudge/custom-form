@@ -11,7 +11,7 @@ import '../sass/main.scss';
 
 export default function App() {
     return (
-        <Router basename='/'>
+        <Router basename='/custom-form'>
             <NavBar />
             <Switch>
                 <Route path='/forms/:formId/responses'>
@@ -26,7 +26,7 @@ export default function App() {
                 <Route path='/form-success'>
                     <ResponseSucess />
                 </Route>
-                <Route path='/:formId'>
+                <Route path='/:formId' exact>
                     <DisplayForm />
                 </Route>
                 <Route path='/'>
