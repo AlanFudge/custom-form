@@ -5,7 +5,7 @@ import DisplayForm from '../features/forms/displayForm';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import ResponseSucess from '../components/responseSuccess';
 import ResponseList from '../features/responses/responseList';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/navBar';
 
 import '../sass/main.scss';
 
