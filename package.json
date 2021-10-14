@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/AlanFudge/custom-form/issues"
   },
-  "homepage": "https://github.com/AlanFudge/custom-form#readme",
+  "homepage": "https://alanfudge.github.io/custom-form",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
     "react": "^17.0.2",
